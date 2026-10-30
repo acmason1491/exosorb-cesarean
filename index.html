@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「嘉茵頤縫」一次性可吸收釘皮內吻合器｜敏盛開刀房</title>
+<meta name="description" content="嘉茵頤縫 一次性可吸收釘皮內吻合器 產品簡報 — 禮康生物科技有限公司">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#122E2A;
+    --ink-soft:#4C605C;
+    --ink-faint:#7C8C89;
+    --paper:#F4F8F6;
+    --paper-card:#FFFFFF;
+    --teal-950:#0A2521;
+    --teal-900:#0D3833;
+    --teal-800:#0F5C56;
+    --teal-700:#166F65;
+    --teal-500:#1F9484;
+    --mint-200:#D8ECE5;
+    --mint-100:#E9F4EF;
+    --coral:#DE7455;
+    --coral-dark:#C05E42;
+    --line:#DCE7E2;
+    --line-strong:#C3D4CD;
+    --shadow: 0 20px 50px -25px rgba(15,54,49,.35);
+    --shadow-sm: 0 8px 20px -12px rgba(15,54,49,.3);
+    --serif: 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    overflow-x:hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection{ background: var(--coral); color:#fff; }
+
+  h1,h2,h3{ font-family: var(--serif); font-weight:700; letter-spacing:.02em; }
+
+  .slide{
+    position:relative;
+    min-height:100svh;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 7vh 8vw;
+    overflow:hidden;
+    scroll-margin-top:0;
+  }
+  .slide-inner{ position:relative; z-index:3; width:100%; max-width:1180px; margin:0 auto; }
+  .slide.dark{ background: linear-gradient(150deg,var(--teal-950) 0%, var(--teal-900) 45%, var(--teal-800) 100%); color:#fff; }
+  .slide.dark .eyebrow{ color: var(--mint-200); }
+  .slide.dark h1, .slide.dark h2{ color:#fff; }
+  .slide.dark p{ color: rgba(255,255,255,.82); }
+
+  /* ---------- decorative texture ---------- */
+  .bg-topo{ position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.5; }
+  .slide.dark .bg-topo{ opacity:.16; }
+  .bg-motif{ position:absolute; z-index:2; pointer-events:none; }
+
+  .grain{
+    position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- eyebrow / labels ---------- */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.6em;
+    font-size:.86rem; font-weight:600; letter-spacing:.28em;
+    color: var(--teal-700); text-transform:uppercase;
+    margin-bottom: 1.4em;
+  }
+  .eyebrow::before{ content:""; width:22px; height:1px; background:currentColor; opacity:.6; }
+
+  p.lead{ font-size:clamp(1.08rem,1.5vw,1.32rem); line-height:1.9; color:var(--ink-soft); max-width:64ch; }
+  p{ font-size:1.02rem; }
+
+  /* ---------- nav dots ---------- */
+  .nav-dots{
+    position:fixed; right: clamp(14px,2.4vw,34px); top:50%; transform:translateY(-50%);
+    z-index:50; display:flex; flex-direction:column; gap:14px;
+  }
+  .nav-dots a{
+    width:9px; height:9px; border-radius:50%;
+    background: rgba(18,46,42,.22);
+    border:1px solid transparent;
+    display:block; position:relative; transition: all .35s ease;
+  }
+  .nav-dots a::after{
+    content: attr(data-label);
+    position:absolute; right:22px; top:50%; transform:translateY(-50%);
+    font-size:.72rem; white-space:nowrap; color:var(--ink);
+    background:var(--paper-card); padding:4px 10px; border-radius:20px;
+    box-shadow:var(--shadow-sm);
+    opacity:0; pointer-events:none; transition:opacity .2s ease; letter-spacing:.05em;
+  }
+  .nav-dots a:hover::after{ opacity:1; }
+  .nav-dots a.active{ background: var(--coral); width:9px; height:26px; border-radius:6px; }
+
+  /* ---------- progress ---------- */
+  .progress-rail{ position:fixed; left:0; top:0; height:3px; width:100%; z-index:60; background:transparent; }
+  .progress-rail i{ display:block; height:100%; width:0%; background: linear-gradient(90deg,var(--teal-700),var(--coral)); transition: width .15s linear; }
+
+  /* ---------- logo mark (fixed corner) ---------- */
+  .brandmark{
+    position:fixed; left: clamp(16px,2.4vw,34px); top: clamp(16px,2.4vw,30px); z-index:55;
+    display:flex; align-items:center; gap:10px; font-size:.72rem; letter-spacing:.18em; color:var(--ink-soft);
+    text-transform:uppercase; font-weight:600;
+    mix-blend-mode:normal;
+  }
+  .brandmark span.dot{ width:6px;height:6px;border-radius:50%; background:var(--coral); display:inline-block; }
+  .slide.dark ~ .brandmark, body.on-dark .brandmark{ color:#fff; }
+
+  /* ================= SLIDE 1 — TITLE ================= */
+  #s1{ align-items:center; text-align:left; }
+  #s1 .kicker{ font-family:var(--serif); font-size:1.05rem; color: var(--mint-200); letter-spacing:.06em; margin-bottom:.6em; }
+  #s1 h1{ font-size: clamp(2.8rem, 6.8vw, 5.5rem); line-height:1.14; color:#fff; max-width:15ch; }
+  #s1 h1 em{ font-style:normal; color: var(--coral); }
+  #s1 .org-row{ margin-top:3.2em; display:flex; flex-wrap:wrap; gap:2.6em 3.4em; }
+  #s1 .org-row .field{ font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--mint-200); margin-bottom:.5em; }
+  #s1 .org-row .val{ font-family:var(--serif); font-size:1.38rem; color:#fff; font-weight:600; }
+  #s1 .hero-motif-line{ position:absolute; right:2%; bottom:10%; width:min(34vw,440px); opacity:.7; }
+  #s1 .hero-photo{
+    position:absolute; right:6%; top:50%; transform:translateY(-50%) rotate(-6deg);
+    width:min(32vw,420px);
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,.45));
+  }
+  #s1 .hero-photo img{ width:100%; display:block; }
+  @media (max-width:900px){
+    #s1 .hero-motif-line{ display:none; }
+    #s1{ padding-top:9vh; }
+    #s1 .hero-photo{
+      position:static; transform:none; margin:0 auto 2.2em; width:min(62vw,280px);
+    }
+  }
+
+  /* ================= SLIDE 2 — 材質說明 ================= */
+  .grid-2{ display:grid; grid-template-columns: .92fr 1.3fr; gap: 4.5vw; align-items:start; }
+  @media (max-width: 880px){ .grid-2{ grid-template-columns:1fr; } }
+  .info-card{
+    background: var(--paper-card); border:1px solid var(--line); border-radius:18px;
+    padding: 1.7em 1.9em; box-shadow: var(--shadow-sm); margin-top:1.4em;
+  }
+  .info-card h3{ font-size:1.12rem; color:var(--teal-800); margin-bottom:.5em; }
+  .info-card p{ font-size:1.04rem; line-height:1.85; color:var(--ink-soft); }
+
+  table.compare{ width:100%; border-collapse:collapse; background:var(--paper-card); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-sm); }
+  table.compare caption{ text-align:left; font-size:.8rem; letter-spacing:.08em; color:var(--ink-faint); padding:1em 1.3em 0; }
+  table.compare th, table.compare td{ padding: 1em 1.3em; font-size:1.02rem; text-align:left; border-bottom:1px solid var(--line); }
+  table.compare thead th{ background: var(--teal-800); color:#fff; font-family:var(--serif); font-weight:600; font-size:.98rem; }
+  table.compare thead th:first-child{ border-top-left-radius:16px; }
+  table.compare thead th:last-child{ border-top-right-radius:16px; }
+  table.compare tbody th{ color:var(--ink-soft); font-weight:600; width:26%; background:var(--mint-100); }
+  table.compare tbody tr:last-child td, table.compare tbody tr:last-child th{ border-bottom:none; }
+  table.compare td.hl{ color:var(--teal-800); font-weight:700; }
+
+  /* ================= SLIDE 3 — benefits ================= */
+  .benefit-list{ display:flex; flex-direction:column; gap: 1.5em; margin-top:2em; }
+  .benefit{
+    display:grid; grid-template-columns: 108px 1fr; gap: 1.8em; align-items:center;
+    background:var(--paper-card); border:1px solid var(--line); border-radius:20px; padding:1.5em 1.7em;
+    box-shadow:var(--shadow-sm);
+  }
+  .benefit .num{ font-family:var(--serif); font-size:2.6rem; color:var(--mint-200); -webkit-text-stroke:1.4px var(--teal-700); color:transparent; font-weight:700; line-height:1; }
+  .benefit .thumb{ width:108px; height:108px; border-radius:14px; overflow:hidden; background:var(--mint-100); flex:none; }
+  .benefit .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .benefit .thumb.contain{ background:#fff; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; padding:.4em; }
+  .benefit .thumb.contain img{ object-fit:contain; width:100%; height:100%; }
+  .benefit.wide{ grid-template-columns: 190px 1fr; }
+  .benefit.wide .thumb{ width:190px; height:108px; }
+  @media (max-width:700px){ .benefit.wide{ grid-template-columns:1fr; } }
+  .benefit h3{ font-size:1.26rem; color:var(--ink); margin-bottom:.35em; }
+  .benefit p{ font-size:1.03rem; color:var(--ink-soft); line-height:1.8; max-width:60ch; }
+  .benefit.stat .stat-num{ font-family:var(--serif); font-size:2.1rem; color:var(--coral); font-weight:700; }
+  @media (max-width:700px){
+    .benefit, .benefit.wide{
+      grid-template-columns: 1fr; gap: 1.1em;
+    }
+    .benefit .thumb, .benefit.wide .thumb{
+      width:100%; height:auto; aspect-ratio: 16/10; order:-1;
+    }
+  }
+
+  /* ================= VIDEO SLIDES (4-7) ================= */
+  .video-layout{ display:grid; grid-template-columns: .95fr 1.15fr; gap:5vw; align-items:center; }
+  @media (max-width:900px){ .video-layout{ grid-template-columns:1fr; } }
+  .video-layout.reverse{ grid-template-columns: 1.15fr .95fr; }
+  @media (max-width:900px){ .video-layout.reverse{ grid-template-columns:1fr; } }
+  .video-layout.reverse .video-frame{ order:-1; }
+  @media (max-width:900px){ .video-layout.reverse .video-frame{ order:0; } }
+  .step-index{ font-family:var(--serif); font-size:5.2rem; font-weight:700; line-height:1; color: var(--mint-200); margin-bottom:.15em; }
+  .video-frame{
+    position:relative; border-radius:22px; overflow:hidden; box-shadow: var(--shadow);
+    border: 6px solid var(--paper-card); background:#000;
+  }
+  .video-frame video{ display:block; width:100%; height:auto; }
+  .video-frame.portrait{ max-width:320px; margin-inline:auto; }
+  .caption-tag{ display:inline-block; font-size:.86rem; letter-spacing:.1em; color:var(--teal-700); background:var(--mint-100); padding:.4em .9em; border-radius:20px; margin-top:1.4em; }
+
+  /* ================= SLIDE 8 — 禁忌症 ================= */
+  .contra-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap: 1em 1.6em; margin-top:2.2em; }
+  @media (max-width:760px){ .contra-grid{ grid-template-columns:1fr; } }
+  .contra-item{
+    display:flex; gap: .9em; align-items:flex-start;
+    background:var(--paper-card); border:1px solid var(--line); border-radius:14px; padding:1.1em 1.3em;
+  }
+  .contra-item .mark{ flex:none; width:26px; height:26px; border-radius:50%; background: rgba(222,116,85,.13); display:flex; align-items:center; justify-content:center; margin-top:.1em; }
+  .contra-item .mark svg{ width:12px; height:12px; }
+  .contra-item p{ font-size:1.02rem; color:var(--ink-soft); line-height:1.7; }
+  .contra-item p b{ color:var(--ink); font-weight:600; }
+  .contra-note{ margin-top:1.6em; font-size:.94rem; color:var(--ink-faint); border-left:2px solid var(--line-strong); padding-left:1em; line-height:1.8; max-width:70ch; }
+
+  /* ================= SLIDE 9 — 總結 ================= */
+  .summary-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:1.4em; margin-top:2em; }
+  @media (max-width:880px){ .summary-grid{ grid-template-columns:1fr; } }
+  .summary-card{ background:var(--paper-card); border-radius:18px; padding:1.7em 1.6em; box-shadow:var(--shadow-sm); border:1px solid var(--line); }
+  .summary-card .tag{ font-family:var(--serif); font-weight:700; font-size:1.06rem; color:var(--teal-800); margin-bottom:1em; display:flex; align-items:center; gap:.6em; }
+  .summary-card .tag .circ{ width:28px;height:28px;border-radius:50%; background:var(--mint-100); color:var(--teal-800); display:flex; align-items:center; justify-content:center; font-size:.85rem; font-weight:700; }
+  .summary-card ul{ list-style:none; display:flex; flex-direction:column; gap:.7em; }
+  .summary-card li{ font-size:.98rem; color:var(--ink-soft); line-height:1.65; padding-left:1.1em; position:relative; }
+  .summary-card li::before{ content:""; position:absolute; left:0; top:.55em; width:5px; height:5px; border-radius:50%; background:var(--coral); }
+
+  .feature-row{ display:flex; flex-wrap:wrap; gap:.7em; margin-top:2.4em; }
+  .feature-row span{ font-size:.9rem; background:var(--teal-800); color:#fff; padding:.55em 1.1em; border-radius:24px; letter-spacing:.03em; }
+
+  .s9-head{ text-align:left; }
+  .s9-bg-photo{
+    position:absolute; z-index:2; left:50%; top:52%; transform:translate(-50%,-50%);
+    width:min(680px,60vw); pointer-events:none;
+    opacity:.5; filter: grayscale(.35) sepia(.18) hue-rotate(120deg) saturate(1.4) drop-shadow(0 25px 40px rgba(15,54,49,.2));
+  }
+  .s9-bg-photo img{ width:100%; display:block; }
+
+  /* ================= SLIDE 10 — closing ================= */
+  #s10{ align-items:center; text-align:center; }
+  #s10 h2{ font-size:clamp(2.2rem,5vw,3.6rem); color:#fff; }
+  #s10 .sub{ margin-top:1em; color:rgba(255,255,255,.75); font-size:1.1rem; letter-spacing:.05em; }
+  #s10 .contact{ margin-top:3em; display:flex; gap:2.4em; justify-content:center; flex-wrap:wrap; }
+  #s10 .contact div{ text-align:left; }
+  #s10 .contact .k{ font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--mint-200); margin-bottom:.4em; }
+  #s10 .contact .v{ font-family:var(--serif); font-size:1.22rem; }
+
+  /* ================= CLINICAL STUDY (500 cesarean cases) ================= */
+  #study1{ background:var(--paper); }
+  #study2{ background:var(--mint-100); }
+  .study-title{ font-size:clamp(1.9rem,3.8vw,2.9rem); line-height:1.25; }
+  .study-title em{ font-style:normal; color:var(--coral); }
+  .study-sub{ margin-top:.55em; display:flex; flex-wrap:wrap; gap:.2em 1.2em; font-size:.9rem; letter-spacing:.12em; color:var(--ink-faint); font-weight:500; }
+  .study-sub span + span::before{ content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--coral); margin-right:.7em; vertical-align:2px; }
+  #study1{ padding-bottom:12vh; }
+  #study2{ padding-bottom:12vh; }
+
+  /* method facts */
+  .facts{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:2em;
+    background:var(--line); border:1px solid var(--line); border-radius:20px; overflow:hidden; box-shadow:var(--shadow-sm);
+  }
+  .fact{ background:var(--paper-card); padding:1.3em 1.5em; }
+  .fact .k{ font-size:.82rem; letter-spacing:.16em; color:var(--teal-700); font-weight:600; margin-bottom:.55em; }
+  .fact .v{ font-family:var(--serif); font-weight:600; font-size:1.12rem; line-height:1.6; color:var(--ink); }
+  @media (max-width:900px){ .facts{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .facts{ grid-template-columns:1fr; } }
+
+  /* results card */
+  .result-card{
+    margin-top:1.5em; display:grid; grid-template-columns:1.6fr 1fr;
+    background:var(--paper-card); border:1px solid var(--line); border-radius:24px; overflow:hidden; box-shadow:var(--shadow-sm);
+  }
+  @media (max-width:900px){ .result-card{ grid-template-columns:1fr; } }
+  .result-main{ padding:1.9em 2.1em 1.7em; }
+  .result-kicker{ font-size:.86rem; letter-spacing:.08em; color:var(--teal-700); font-weight:600; }
+  .result-big{ display:flex; align-items:baseline; flex-wrap:wrap; gap:.3em 1em; margin:.25em 0 1.1em; }
+  .result-big .num{ font-family:var(--serif); font-weight:700; font-size:clamp(3.4rem,7vw,5.2rem); line-height:1; color:var(--coral); }
+  .result-big .of{ font-size:1.08rem; color:var(--ink-soft); line-height:1.6; }
+  .result-big .of b{ color:var(--ink); font-weight:600; }
+
+  .dotfield{ display:grid; grid-template-columns:repeat(var(--cols,50),1fr); gap:3px; padding:2px; }
+  .dotfield .d{
+    aspect-ratio:1; border-radius:50%; background:var(--teal-500); opacity:.4;
+    transition:opacity .5s ease, transform .5s ease; transition-delay:calc(var(--i) * 1.4ms);
+  }
+  .dotfield .d.hit{
+    position:relative; z-index:1; background:var(--coral); opacity:1; transform:scale(1.75);
+    box-shadow:0 0 0 3px rgba(222,116,85,.22); transition-delay:1.1s;
+  }
+  .js .dotfield:not(.in) .d{ opacity:0; }
+  .js .dotfield:not(.in) .d.hit{ transform:scale(.3); }
+  @media (max-width:700px){ .dotfield{ --cols:25; } }
+  @media (prefers-reduced-motion:reduce){ .dotfield .d{ transition:none; } }
+
+  .dot-legend{ display:flex; flex-wrap:wrap; gap:.4em 1.4em; margin-top:1em; font-size:.88rem; color:var(--ink-faint); line-height:1.6; }
+  .dot-legend i{ display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:.5em; vertical-align:-1px; }
+  .dot-legend .a i{ background:var(--teal-500); opacity:.45; }
+  .dot-legend .b i{ background:var(--coral); }
+
+  .result-side{ padding:1.9em 2.1em; background:var(--mint-100); display:flex; flex-direction:column; gap:1.5em; }
+  @media (max-width:900px){ .result-side{ border-top:1px solid var(--line); } }
+  .result-side h3{ font-family:var(--sans); font-size:.86rem; letter-spacing:.14em; color:var(--teal-700); font-weight:600; }
+  .out-list{ list-style:none; display:flex; flex-direction:column; }
+  .out-list li{
+    display:flex; align-items:baseline; justify-content:space-between; gap:1em;
+    padding:.8em 0; border-bottom:1px solid var(--line-strong); font-size:1.08rem; color:var(--ink);
+  }
+  .out-list li:last-child{ border-bottom:none; }
+  .out-list .n{ font-family:var(--serif); font-weight:700; font-size:1.9rem; line-height:1; color:var(--teal-800); }
+  .out-list .n small{ font-family:var(--sans); font-size:.9rem; font-weight:500; color:var(--ink-soft); margin-left:.25em; }
+  .satisfy{ background:var(--paper-card); border-radius:16px; padding:1.1em 1.3em; }
+  .satisfy b{ display:block; font-family:var(--serif); font-size:1.08rem; color:var(--ink); margin-bottom:.35em; }
+  .satisfy p{ font-size:1rem; line-height:1.8; color:var(--ink-soft); }
+
+  /* discussion */
+  .study2-grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:3.2vw; align-items:center; margin-top:2em; }
+  @media (max-width:900px){ .study2-grid{ grid-template-columns:1fr; gap:1.8em; } }
+  .poster{ margin:0; }
+  .poster-btn{
+    display:block; width:100%; padding:0; border:6px solid var(--paper-card); border-radius:20px; overflow:hidden;
+    background:#fff; box-shadow:var(--shadow); cursor:zoom-in; position:relative; font:inherit;
+  }
+  .poster-btn img{ width:100%; display:block; }
+  .poster-btn .zoom{
+    position:absolute; right:.8em; bottom:.8em; display:inline-flex; align-items:center; gap:.45em;
+    background:rgba(10,37,33,.82); color:#fff; font-size:.86rem; letter-spacing:.06em; padding:.5em 1em; border-radius:22px;
+  }
+  .poster-btn .zoom svg{ width:15px; height:15px; }
+  .poster-btn:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  .poster figcaption{ margin-top:.9em; font-size:.88rem; line-height:1.7; color:var(--ink-faint); }
+  .poster figcaption b{ color:var(--ink-soft); font-weight:600; }
+
+  .adv-list{ display:flex; flex-direction:column; gap:1.1em; }
+  .adv{
+    display:grid; grid-template-columns:48px 1fr; gap:1.1em; align-items:start;
+    background:var(--paper-card); border:1px solid var(--line); border-radius:18px; padding:1.3em 1.5em; box-shadow:var(--shadow-sm);
+  }
+  .adv .ic{ width:48px; height:48px; border-radius:14px; background:var(--teal-800); color:#fff; display:flex; align-items:center; justify-content:center; }
+  .adv .ic svg{ width:24px; height:24px; }
+  .adv h3{ font-size:1.2rem; color:var(--ink); margin-bottom:.35em; }
+  @media (max-width:700px){
+    .adv{ align-items:center; padding:1.2em 1.3em; }
+    .adv > div:last-child{ display:contents; }
+    .adv h3{ margin:0; }
+    .adv p{ grid-column:1 / -1; }
+  }
+  .adv p{ font-size:1.02rem; line-height:1.85; color:var(--ink-soft); }
+
+  .conclusion{
+    margin-top:2em; display:grid; grid-template-columns:auto 1fr; gap:1.2em 2em; align-items:center;
+    background:linear-gradient(150deg,var(--teal-950) 0%, var(--teal-900) 50%, var(--teal-800) 100%);
+    color:#fff; border-radius:24px; padding:1.9em 2.3em; box-shadow:var(--shadow);
+  }
+  .conclusion .lbl{ font-family:var(--serif); font-weight:700; font-size:1.5rem; color:var(--coral); letter-spacing:.2em; }
+  .conclusion p{ font-size:clamp(1.05rem,1.5vw,1.25rem); line-height:1.9; color:rgba(255,255,255,.92); }
+  .conclusion p b{ color:#fff; font-weight:700; }
+  @media (max-width:700px){ .conclusion{ grid-template-columns:1fr; padding:1.6em 1.5em; } }
+
+  /* lightbox for the original poster */
+  .lightbox{
+    display:none; position:fixed; inset:0; z-index:100; background:rgba(8,28,25,.94);
+    overflow:auto; padding:64px 16px 28px; cursor:zoom-out; -webkit-overflow-scrolling:touch;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{ margin:auto; width:min(1218px,100%); height:auto; border-radius:6px; background:#fff; }
+  @media (max-width:700px){ .lightbox img{ width:230vw; max-width:none; } }
+  .lightbox .close{
+    position:fixed; top:14px; right:16px; z-index:101; width:44px; height:44px; border-radius:50%;
+    border:1px solid rgba(255,255,255,.4); background:rgba(10,37,33,.85); color:#fff; font-size:1.4rem; line-height:1; cursor:pointer;
+  }
+  .lightbox .hint{ position:fixed; left:0; right:0; top:22px; text-align:center; color:rgba(255,255,255,.7); font-size:.86rem; letter-spacing:.08em; pointer-events:none; }
+
+  section#s2, section#s3, section#s8, section#s9{ background:var(--paper); }
+  section#s4, section#s6{ background: var(--mint-100); }
+  section#s5, section#s7{ background: var(--paper); }
+
+  .footer-index{ position:absolute; bottom:6vh; left:8vw; font-size:.72rem; letter-spacing:.15em; color:var(--ink-faint); }
+  .slide.dark .footer-index{ color:rgba(255,255,255,.5); }
+
+  @media (max-width:600px){
+    .slide{ padding: 12vh 6vw 8vh; }
+    .nav-dots{ display:none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<div class="progress-rail"><i id="progressBar"></i></div>
+<div class="brandmark"><span class="dot"></span> 嘉茵頤縫 · JIAYIN SUTURE</div>
+
+<nav class="nav-dots" id="navDots">
+  <a href="#s1" data-label="封面"></a>
+  <a href="#s2" data-label="材質說明"></a>
+  <a href="#s3" data-label="效益比較"></a>
+  <a href="#s4" data-label="操作原理"></a>
+  <a href="#s5" data-label="標準操作"></a>
+  <a href="#s6" data-label="臨床實例"></a>
+  <a href="#s7" data-label="較長傷口"></a>
+  <a href="#s8" data-label="禁忌症"></a>
+  <a href="#study1" data-label="500例研究結果"></a>
+  <a href="#study2" data-label="技術優勢與結論"></a>
+  <a href="#s9" data-label="總結"></a>
+  <a href="#s10" data-label="Thank You"></a>
+</nav>
+
+<main>
+
+<!-- ============ SLIDE 1 ============ -->
+<section class="slide dark" id="s1">
+  <svg class="bg-topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#1F9484"/>
+        <stop offset="1" stop-color="#0A2521"/>
+      </linearGradient>
+    </defs>
+    <g stroke="#EAF6F1" stroke-opacity="0.18" fill="none" stroke-width="1">
+      <path d="M-100,700 C 250,600 400,780 760,650 S 1300,520 1600,600"/>
+      <path d="M-100,780 C 250,680 400,860 760,730 S 1300,600 1600,680"/>
+      <path d="M-100,860 C 250,760 400,940 760,810 S 1300,680 1600,760"/>
+    </g>
+    <circle cx="1180" cy="180" r="260" fill="url(#g1)" opacity="0.25"/>
+  </svg>
+
+  <!-- signature motif: suture -> staple (small accent, kept subtle behind photo) -->
+  <svg class="hero-motif-line" viewBox="0 0 520 160" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#EAF6F1" stroke-opacity="0.4" stroke-width="2" fill="none">
+      <line x1="20" y1="60" x2="480" y2="60"/>
+    </g>
+    <g stroke="#EAF6F1" stroke-opacity="0.6" stroke-width="3" stroke-linecap="round">
+      <line x1="50" y1="30" x2="80" y2="90"/>
+      <line x1="95" y1="30" x2="125" y2="90"/>
+      <line x1="140" y1="30" x2="170" y2="90"/>
+    </g>
+    <g fill="#DE7455">
+      <circle cx="300" cy="60" r="7"/>
+      <circle cx="340" cy="60" r="7"/>
+      <circle cx="380" cy="60" r="7"/>
+      <circle cx="420" cy="60" r="7"/>
+      <circle cx="460" cy="60" r="7"/>
+    </g>
+  </svg>
+  <div class="hero-photo">
+    <img src="assets/img/product-hero.png" alt="嘉茵頤縫產品實拍照（去背）">
+  </div>
+
+  <div class="grain"></div>
+  <div class="slide-inner">
+    <div class="kicker">「嘉茵頤縫」</div>
+    <h1>一次性可吸收釘<br><em>皮內吻合器</em></h1>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2 — 材質說明 ============ -->
+<section class="slide" id="s2">
+  <svg class="bg-topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#0F5C56" stroke-opacity="0.06" fill="none" stroke-width="1">
+      <path d="M-100,120 C 250,60 400,180 760,110 S 1300,40 1600,110"/>
+      <path d="M-100,60 C 250,0 400,120 760,50 S 1300,-20 1600,50"/>
+    </g>
+  </svg>
+  <div class="slide-inner">
+    <div class="eyebrow">Material · 01</div>
+    <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem); margin-bottom:.9em;">材質說明</h2>
+    <div class="grid-2">
+      <div>
+        <p class="lead">聚乳酸-乙醇酸共聚物，通常稱為 <b style="color:var(--teal-800)">PLGA</b>，是一種生物可降解的高分子材料，由乳酸與乙醇酸兩種單體組成。具備良好的生物相容性與可控的降解速率，於醫療領域應用廣泛，如醫用縫合線。</p>
+        <div class="info-card">
+          <h3>關於 CAS 編號</h3>
+          <p>在材料科學領域，CAS 通常指 CAS Registry Number。編號目的是為了方便資料庫檢索，並避免化學物質名稱多樣性所帶來的混淆。</p>
+        </div>
+      </div>
+      <table class="compare">
+        <caption>材料對比 — Vicryl 縫線 ／ 皮內吻合釘</caption>
+        <thead>
+          <tr><th>項目</th><th>Vicryl 可吸收縫線</th><th>一次性可吸收皮內吻合釘</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>材料名稱</th><td>聚乳酸-乙醇酸共聚物 (PLGA)</td><td class="hl">聚乳酸-乙醇酸共聚物 (PLGA)</td></tr>
+          <tr><th>組成</th><td>90% 乳酸、10% 乙醇酸</td><td class="hl">40% 乳酸、60% 乙醇酸</td></tr>
+          <tr><th>分子式</th><td>(C₆H₈O₄)m (C₄H₄O₄)n</td><td class="hl">(C₆H₈O₄)m (C₄H₄O₄)n</td></tr>
+          <tr><th>CAS</th><td>26780-50-7</td><td class="hl">26780-50-7</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer-index">02 / 12</div>
+</section>
+
+<!-- ============ SLIDE 3 — 效益比較 ============ -->
+<section class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="eyebrow">Advantages · 02</div>
+    <h2 style="font-size:clamp(1.7rem,3.2vw,2.5rem); max-width:20ch;">可吸收皮內吻合釘 vs 可吸收縫線</h2>
+    <div class="benefit-list">
+      <div class="benefit wide">
+        <div class="thumb contain"><img src="assets/img/compare-full.jpg" alt="皮內吻合釘與可吸收縫線表面比較"></div>
+        <div>
+          <h3>1 · 降低感染</h3>
+          <p>可吸收縫線為多股編織，表面積大且粗糙，容易附著細菌，導致感染風險；縫線於真皮層縫合亦容易造成組織「切割」，可能導致紅斑與炎症增加。可吸收釘表面光滑，可避免上述縫線的弊端。</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="thumb contain"><img src="assets/img/staple-size.jpg" alt="皮內吻合釘尺寸示意"></div>
+        <div>
+          <h3>2 · 異物感刺激小</h3>
+          <p>光滑表面設計大幅降低組織異物感，減少術後不適，提升病患恢復期間的整體舒適度。</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="thumb contain"><img src="assets/img/product-hero.png" alt="嘉茵頤縫產品實拍（去背）"></div>
+        <div>
+          <h3>3 · 可縫合長度</h3>
+          <p>可以縫合約 <b style="color:var(--coral);">21cm</b> 傷口，吻合器內含 30 根皮內釘，足以應對多數臨床縫合情境。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">03 / 12</div>
+</section>
+
+<!-- ============ SLIDE 4 — 操作原理 ============ -->
+<section class="slide" id="s4">
+  <div class="slide-inner">
+    <div class="video-layout">
+      <div>
+        <div class="step-index">01</div>
+        <div class="eyebrow">Mechanism</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">操作原理</h2>
+        <p class="lead" style="margin-top:.8em;">透過吻合器將可吸收釘精準植入真皮層，取代傳統縫線的貫穿式縫合，完整示範吻合器的作用機制。</p>
+        <span class="caption-tag">示範影片 · 操作原理</span>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/posters/principle.jpg" playsinline>
+          <source src="assets/video/procedure-principle.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">04 / 12</div>
+</section>
+
+<!-- ============ SLIDE 5 — 標準操作 ============ -->
+<section class="slide" id="s5">
+  <div class="slide-inner">
+    <div class="video-layout reverse">
+      <div>
+        <div class="step-index">02</div>
+        <div class="eyebrow">Standard Procedure</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">標準操作</h2>
+        <p class="lead" style="margin-top:.8em;">依循標準作業流程逐一植入皮內釘，維持等距、對稱，確保傷口張力均勻分佈。</p>
+        <span class="caption-tag">示範影片 · 標準操作</span>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/posters/standard.jpg" playsinline>
+          <source src="assets/video/standard-operation.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">05 / 12</div>
+</section>
+
+<!-- ============ SLIDE 6 — 臨床實例 ============ -->
+<section class="slide" id="s6">
+  <div class="slide-inner">
+    <div class="video-layout">
+      <div>
+        <div class="step-index">03</div>
+        <div class="eyebrow">Clinical Case</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">臨床實例</h2>
+        <p class="lead" style="margin-top:.8em;">實際手術現場應用案例，呈現皮內吻合釘於真實傷口縫合中的操作情形與術後外觀。</p>
+        <span class="caption-tag">示範影片 · 臨床實例</span>
+      </div>
+      <div class="video-frame">
+        <video controls preload="metadata" poster="assets/img/posters/clinical.jpg" playsinline>
+          <source src="assets/video/clinical-case.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">06 / 12</div>
+</section>
+
+<!-- ============ SLIDE 7 — 較長傷口縫合 ============ -->
+<section class="slide" id="s7">
+  <div class="slide-inner">
+    <div class="video-layout reverse">
+      <div>
+        <div class="step-index">04</div>
+        <div class="eyebrow">Extended Wound Closure</div>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);">較長傷口縫合</h2>
+        <p class="lead" style="margin-top:.8em;">針對較長傷口的分段植入策略，維持縫合線張力一致，兼顧效率與美觀。</p>
+        <span class="caption-tag">示範影片 · 較長傷口縫合</span>
+      </div>
+      <div class="video-frame portrait">
+        <video controls preload="metadata" poster="assets/img/posters/longer.jpg" playsinline>
+          <source src="assets/video/longer-wound.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">07 / 12</div>
+</section>
+
+<!-- ============ SLIDE 8 — 禁忌症 ============ -->
+<section class="slide" id="s8">
+  <div class="slide-inner">
+    <div class="eyebrow">Contraindications · 03</div>
+    <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);">禁忌症</h2>
+    <p class="lead" style="margin-top:.6em;">以下情況不適用：</p>
+    <div class="contra-grid">
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>縫合中對組織<b>過度拉伸</b>的情況</p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>皮膚組織<b>過薄或過厚</b></p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>需要 <b>X 線輻射不穿透</b> 的情形（如可吸收釘用於定位診斷時，不適合使用）</p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p><b>真皮以外</b>的其他組織</p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>縫合<b>不平坦區域</b></p></div>
+      <div class="contra-item"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>不能用於<b>三級感染切口</b></p></div>
+      <div class="contra-item" style="grid-column:1/-1;"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#DE7455" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span><p>不能在<b>疤痕組織</b>上使用</p></div>
+    </div>
+    <p class="contra-note">主要原因為疤痕組織中的膠原纖維，功能質量通常較為低劣；剔除疤痕後，可使用。</p>
+  </div>
+  <div class="footer-index">08 / 12</div>
+</section>
+
+<!-- ============ NEW SLIDE 9 — 500 例剖腹產臨床研究（摘要與結果） ============ -->
+<section class="slide" id="study1">
+  <div class="slide-inner">
+    <div class="eyebrow">Clinical Study · 04</div>
+    <h2 class="study-title"><em>500</em> 例剖腹產臨床研究</h2>
+    <div class="study-sub"><span>SUBCUTICULAR ABSORBABLE STAPLES</span><span>回顧性研究</span></div>
+    <p class="lead" style="margin-top:1.1em;">本研究旨在評估剖腹產手術中使用可吸收皮內吻合器（Subcuticular Absorbable Staples）的有效性、傷口癒合情況、併發症發生率及患者滿意度。</p>
+
+    <div class="facts">
+      <div class="fact"><div class="k">研究對象</div><div class="v">連續 500 例使用該吻合器的剖腹產案例</div></div>
+      <div class="fact"><div class="k">研究期間</div><div class="v">四年內（至 2008 年 12 月）</div></div>
+      <div class="fact"><div class="k">研究設計</div><div class="v">回顧性研究</div></div>
+      <div class="fact"><div class="k">觀察項目</div><div class="v">術後 30 天內的感染情況、傷口併發症及病患的恢復感</div></div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-main">
+        <div class="result-kicker">臨床研究結果（n = 500）· 感染率極低</div>
+        <div class="result-big">
+          <span class="num">1.2%</span>
+          <span class="of">手術部位感染率（SSI）<br><b>500 例中僅 6 例</b></span>
+        </div>
+        <div class="dotfield" id="dotfield" role="img" aria-label="500 個圓點代表 500 例個案，其中 6 個紅點為手術部位感染"><span class="d" style="--i:0"></span><span class="d" style="--i:1"></span><span class="d" style="--i:2"></span><span class="d" style="--i:3"></span><span class="d" style="--i:4"></span><span class="d" style="--i:5"></span><span class="d" style="--i:6"></span><span class="d" style="--i:7"></span><span class="d" style="--i:8"></span><span class="d" style="--i:9"></span><span class="d" style="--i:10"></span><span class="d" style="--i:11"></span><span class="d" style="--i:12"></span><span class="d" style="--i:13"></span><span class="d" style="--i:14"></span><span class="d" style="--i:15"></span><span class="d" style="--i:16"></span><span class="d" style="--i:17"></span><span class="d" style="--i:18"></span><span class="d" style="--i:19"></span><span class="d" style="--i:20"></span><span class="d" style="--i:21"></span><span class="d" style="--i:22"></span><span class="d" style="--i:23"></span><span class="d" style="--i:24"></span><span class="d" style="--i:25"></span><span class="d" style="--i:26"></span><span class="d" style="--i:27"></span><span class="d" style="--i:28"></span><span class="d" style="--i:29"></span><span class="d" style="--i:30"></span><span class="d" style="--i:31"></span><span class="d" style="--i:32"></span><span class="d" style="--i:33"></span><span class="d" style="--i:34"></span><span class="d" style="--i:35"></span><span class="d" style="--i:36"></span><span class="d" style="--i:37"></span><span class="d" style="--i:38"></span><span class="d" style="--i:39"></span><span class="d" style="--i:40"></span><span class="d hit" style="--i:41"></span><span class="d" style="--i:42"></span><span class="d" style="--i:43"></span><span class="d" style="--i:44"></span><span class="d" style="--i:45"></span><span class="d" style="--i:46"></span><span class="d" style="--i:47"></span><span class="d" style="--i:48"></span><span class="d" style="--i:49"></span><span class="d" style="--i:50"></span><span class="d" style="--i:51"></span><span class="d" style="--i:52"></span><span class="d" style="--i:53"></span><span class="d" style="--i:54"></span><span class="d" style="--i:55"></span><span class="d" style="--i:56"></span><span class="d" style="--i:57"></span><span class="d" style="--i:58"></span><span class="d" style="--i:59"></span><span class="d" style="--i:60"></span><span class="d" style="--i:61"></span><span class="d" style="--i:62"></span><span class="d" style="--i:63"></span><span class="d" style="--i:64"></span><span class="d" style="--i:65"></span><span class="d" style="--i:66"></span><span class="d" style="--i:67"></span><span class="d" style="--i:68"></span><span class="d" style="--i:69"></span><span class="d" style="--i:70"></span><span class="d" style="--i:71"></span><span class="d" style="--i:72"></span><span class="d" style="--i:73"></span><span class="d" style="--i:74"></span><span class="d" style="--i:75"></span><span class="d" style="--i:76"></span><span class="d" style="--i:77"></span><span class="d" style="--i:78"></span><span class="d" style="--i:79"></span><span class="d" style="--i:80"></span><span class="d" style="--i:81"></span><span class="d" style="--i:82"></span><span class="d" style="--i:83"></span><span class="d" style="--i:84"></span><span class="d" style="--i:85"></span><span class="d" style="--i:86"></span><span class="d" style="--i:87"></span><span class="d" style="--i:88"></span><span class="d" style="--i:89"></span><span class="d" style="--i:90"></span><span class="d" style="--i:91"></span><span class="d" style="--i:92"></span><span class="d" style="--i:93"></span><span class="d" style="--i:94"></span><span class="d" style="--i:95"></span><span class="d" style="--i:96"></span><span class="d" style="--i:97"></span><span class="d" style="--i:98"></span><span class="d" style="--i:99"></span><span class="d" style="--i:100"></span><span class="d" style="--i:101"></span><span class="d" style="--i:102"></span><span class="d" style="--i:103"></span><span class="d" style="--i:104"></span><span class="d" style="--i:105"></span><span class="d" style="--i:106"></span><span class="d" style="--i:107"></span><span class="d" style="--i:108"></span><span class="d" style="--i:109"></span><span class="d" style="--i:110"></span><span class="d" style="--i:111"></span><span class="d" style="--i:112"></span><span class="d" style="--i:113"></span><span class="d" style="--i:114"></span><span class="d" style="--i:115"></span><span class="d" style="--i:116"></span><span class="d" style="--i:117"></span><span class="d" style="--i:118"></span><span class="d" style="--i:119"></span><span class="d" style="--i:120"></span><span class="d" style="--i:121"></span><span class="d" style="--i:122"></span><span class="d" style="--i:123"></span><span class="d" style="--i:124"></span><span class="d" style="--i:125"></span><span class="d" style="--i:126"></span><span class="d hit" style="--i:127"></span><span class="d" style="--i:128"></span><span class="d" style="--i:129"></span><span class="d" style="--i:130"></span><span class="d" style="--i:131"></span><span class="d" style="--i:132"></span><span class="d" style="--i:133"></span><span class="d" style="--i:134"></span><span class="d" style="--i:135"></span><span class="d" style="--i:136"></span><span class="d" style="--i:137"></span><span class="d" style="--i:138"></span><span class="d" style="--i:139"></span><span class="d" style="--i:140"></span><span class="d" style="--i:141"></span><span class="d" style="--i:142"></span><span class="d" style="--i:143"></span><span class="d" style="--i:144"></span><span class="d" style="--i:145"></span><span class="d" style="--i:146"></span><span class="d" style="--i:147"></span><span class="d" style="--i:148"></span><span class="d" style="--i:149"></span><span class="d" style="--i:150"></span><span class="d" style="--i:151"></span><span class="d" style="--i:152"></span><span class="d" style="--i:153"></span><span class="d" style="--i:154"></span><span class="d" style="--i:155"></span><span class="d" style="--i:156"></span><span class="d" style="--i:157"></span><span class="d" style="--i:158"></span><span class="d" style="--i:159"></span><span class="d" style="--i:160"></span><span class="d" style="--i:161"></span><span class="d" style="--i:162"></span><span class="d" style="--i:163"></span><span class="d" style="--i:164"></span><span class="d" style="--i:165"></span><span class="d" style="--i:166"></span><span class="d" style="--i:167"></span><span class="d" style="--i:168"></span><span class="d" style="--i:169"></span><span class="d" style="--i:170"></span><span class="d" style="--i:171"></span><span class="d" style="--i:172"></span><span class="d" style="--i:173"></span><span class="d" style="--i:174"></span><span class="d" style="--i:175"></span><span class="d" style="--i:176"></span><span class="d" style="--i:177"></span><span class="d" style="--i:178"></span><span class="d" style="--i:179"></span><span class="d" style="--i:180"></span><span class="d" style="--i:181"></span><span class="d" style="--i:182"></span><span class="d" style="--i:183"></span><span class="d" style="--i:184"></span><span class="d" style="--i:185"></span><span class="d" style="--i:186"></span><span class="d" style="--i:187"></span><span class="d" style="--i:188"></span><span class="d" style="--i:189"></span><span class="d" style="--i:190"></span><span class="d" style="--i:191"></span><span class="d" style="--i:192"></span><span class="d" style="--i:193"></span><span class="d" style="--i:194"></span><span class="d" style="--i:195"></span><span class="d" style="--i:196"></span><span class="d" style="--i:197"></span><span class="d" style="--i:198"></span><span class="d" style="--i:199"></span><span class="d" style="--i:200"></span><span class="d" style="--i:201"></span><span class="d" style="--i:202"></span><span class="d hit" style="--i:203"></span><span class="d" style="--i:204"></span><span class="d" style="--i:205"></span><span class="d" style="--i:206"></span><span class="d" style="--i:207"></span><span class="d" style="--i:208"></span><span class="d" style="--i:209"></span><span class="d" style="--i:210"></span><span class="d" style="--i:211"></span><span class="d" style="--i:212"></span><span class="d" style="--i:213"></span><span class="d" style="--i:214"></span><span class="d" style="--i:215"></span><span class="d" style="--i:216"></span><span class="d" style="--i:217"></span><span class="d" style="--i:218"></span><span class="d" style="--i:219"></span><span class="d" style="--i:220"></span><span class="d" style="--i:221"></span><span class="d" style="--i:222"></span><span class="d" style="--i:223"></span><span class="d" style="--i:224"></span><span class="d" style="--i:225"></span><span class="d" style="--i:226"></span><span class="d" style="--i:227"></span><span class="d" style="--i:228"></span><span class="d" style="--i:229"></span><span class="d" style="--i:230"></span><span class="d" style="--i:231"></span><span class="d" style="--i:232"></span><span class="d" style="--i:233"></span><span class="d" style="--i:234"></span><span class="d" style="--i:235"></span><span class="d" style="--i:236"></span><span class="d" style="--i:237"></span><span class="d" style="--i:238"></span><span class="d" style="--i:239"></span><span class="d" style="--i:240"></span><span class="d" style="--i:241"></span><span class="d" style="--i:242"></span><span class="d" style="--i:243"></span><span class="d" style="--i:244"></span><span class="d" style="--i:245"></span><span class="d" style="--i:246"></span><span class="d" style="--i:247"></span><span class="d" style="--i:248"></span><span class="d" style="--i:249"></span><span class="d" style="--i:250"></span><span class="d" style="--i:251"></span><span class="d" style="--i:252"></span><span class="d" style="--i:253"></span><span class="d" style="--i:254"></span><span class="d" style="--i:255"></span><span class="d" style="--i:256"></span><span class="d" style="--i:257"></span><span class="d" style="--i:258"></span><span class="d" style="--i:259"></span><span class="d" style="--i:260"></span><span class="d" style="--i:261"></span><span class="d" style="--i:262"></span><span class="d" style="--i:263"></span><span class="d" style="--i:264"></span><span class="d" style="--i:265"></span><span class="d" style="--i:266"></span><span class="d" style="--i:267"></span><span class="d" style="--i:268"></span><span class="d" style="--i:269"></span><span class="d" style="--i:270"></span><span class="d" style="--i:271"></span><span class="d" style="--i:272"></span><span class="d" style="--i:273"></span><span class="d" style="--i:274"></span><span class="d" style="--i:275"></span><span class="d" style="--i:276"></span><span class="d" style="--i:277"></span><span class="d" style="--i:278"></span><span class="d" style="--i:279"></span><span class="d" style="--i:280"></span><span class="d" style="--i:281"></span><span class="d" style="--i:282"></span><span class="d" style="--i:283"></span><span class="d" style="--i:284"></span><span class="d" style="--i:285"></span><span class="d" style="--i:286"></span><span class="d" style="--i:287"></span><span class="d hit" style="--i:288"></span><span class="d" style="--i:289"></span><span class="d" style="--i:290"></span><span class="d" style="--i:291"></span><span class="d" style="--i:292"></span><span class="d" style="--i:293"></span><span class="d" style="--i:294"></span><span class="d" style="--i:295"></span><span class="d" style="--i:296"></span><span class="d" style="--i:297"></span><span class="d" style="--i:298"></span><span class="d" style="--i:299"></span><span class="d" style="--i:300"></span><span class="d" style="--i:301"></span><span class="d" style="--i:302"></span><span class="d" style="--i:303"></span><span class="d" style="--i:304"></span><span class="d" style="--i:305"></span><span class="d" style="--i:306"></span><span class="d" style="--i:307"></span><span class="d" style="--i:308"></span><span class="d" style="--i:309"></span><span class="d" style="--i:310"></span><span class="d" style="--i:311"></span><span class="d" style="--i:312"></span><span class="d" style="--i:313"></span><span class="d" style="--i:314"></span><span class="d" style="--i:315"></span><span class="d" style="--i:316"></span><span class="d" style="--i:317"></span><span class="d" style="--i:318"></span><span class="d" style="--i:319"></span><span class="d" style="--i:320"></span><span class="d" style="--i:321"></span><span class="d" style="--i:322"></span><span class="d" style="--i:323"></span><span class="d" style="--i:324"></span><span class="d" style="--i:325"></span><span class="d" style="--i:326"></span><span class="d" style="--i:327"></span><span class="d" style="--i:328"></span><span class="d" style="--i:329"></span><span class="d" style="--i:330"></span><span class="d" style="--i:331"></span><span class="d" style="--i:332"></span><span class="d" style="--i:333"></span><span class="d" style="--i:334"></span><span class="d" style="--i:335"></span><span class="d" style="--i:336"></span><span class="d" style="--i:337"></span><span class="d" style="--i:338"></span><span class="d" style="--i:339"></span><span class="d" style="--i:340"></span><span class="d" style="--i:341"></span><span class="d" style="--i:342"></span><span class="d" style="--i:343"></span><span class="d" style="--i:344"></span><span class="d" style="--i:345"></span><span class="d" style="--i:346"></span><span class="d" style="--i:347"></span><span class="d" style="--i:348"></span><span class="d" style="--i:349"></span><span class="d" style="--i:350"></span><span class="d" style="--i:351"></span><span class="d" style="--i:352"></span><span class="d" style="--i:353"></span><span class="d" style="--i:354"></span><span class="d" style="--i:355"></span><span class="d hit" style="--i:356"></span><span class="d" style="--i:357"></span><span class="d" style="--i:358"></span><span class="d" style="--i:359"></span><span class="d" style="--i:360"></span><span class="d" style="--i:361"></span><span class="d" style="--i:362"></span><span class="d" style="--i:363"></span><span class="d" style="--i:364"></span><span class="d" style="--i:365"></span><span class="d" style="--i:366"></span><span class="d" style="--i:367"></span><span class="d" style="--i:368"></span><span class="d" style="--i:369"></span><span class="d" style="--i:370"></span><span class="d" style="--i:371"></span><span class="d" style="--i:372"></span><span class="d" style="--i:373"></span><span class="d" style="--i:374"></span><span class="d" style="--i:375"></span><span class="d" style="--i:376"></span><span class="d" style="--i:377"></span><span class="d" style="--i:378"></span><span class="d" style="--i:379"></span><span class="d" style="--i:380"></span><span class="d" style="--i:381"></span><span class="d" style="--i:382"></span><span class="d" style="--i:383"></span><span class="d" style="--i:384"></span><span class="d" style="--i:385"></span><span class="d" style="--i:386"></span><span class="d" style="--i:387"></span><span class="d" style="--i:388"></span><span class="d" style="--i:389"></span><span class="d" style="--i:390"></span><span class="d" style="--i:391"></span><span class="d" style="--i:392"></span><span class="d" style="--i:393"></span><span class="d" style="--i:394"></span><span class="d" style="--i:395"></span><span class="d" style="--i:396"></span><span class="d" style="--i:397"></span><span class="d" style="--i:398"></span><span class="d" style="--i:399"></span><span class="d" style="--i:400"></span><span class="d" style="--i:401"></span><span class="d" style="--i:402"></span><span class="d" style="--i:403"></span><span class="d" style="--i:404"></span><span class="d" style="--i:405"></span><span class="d" style="--i:406"></span><span class="d" style="--i:407"></span><span class="d" style="--i:408"></span><span class="d" style="--i:409"></span><span class="d" style="--i:410"></span><span class="d" style="--i:411"></span><span class="d" style="--i:412"></span><span class="d" style="--i:413"></span><span class="d" style="--i:414"></span><span class="d" style="--i:415"></span><span class="d" style="--i:416"></span><span class="d" style="--i:417"></span><span class="d" style="--i:418"></span><span class="d" style="--i:419"></span><span class="d" style="--i:420"></span><span class="d" style="--i:421"></span><span class="d" style="--i:422"></span><span class="d" style="--i:423"></span><span class="d" style="--i:424"></span><span class="d" style="--i:425"></span><span class="d" style="--i:426"></span><span class="d" style="--i:427"></span><span class="d" style="--i:428"></span><span class="d" style="--i:429"></span><span class="d" style="--i:430"></span><span class="d" style="--i:431"></span><span class="d" style="--i:432"></span><span class="d" style="--i:433"></span><span class="d" style="--i:434"></span><span class="d" style="--i:435"></span><span class="d" style="--i:436"></span><span class="d" style="--i:437"></span><span class="d" style="--i:438"></span><span class="d" style="--i:439"></span><span class="d" style="--i:440"></span><span class="d" style="--i:441"></span><span class="d" style="--i:442"></span><span class="d" style="--i:443"></span><span class="d" style="--i:444"></span><span class="d" style="--i:445"></span><span class="d" style="--i:446"></span><span class="d hit" style="--i:447"></span><span class="d" style="--i:448"></span><span class="d" style="--i:449"></span><span class="d" style="--i:450"></span><span class="d" style="--i:451"></span><span class="d" style="--i:452"></span><span class="d" style="--i:453"></span><span class="d" style="--i:454"></span><span class="d" style="--i:455"></span><span class="d" style="--i:456"></span><span class="d" style="--i:457"></span><span class="d" style="--i:458"></span><span class="d" style="--i:459"></span><span class="d" style="--i:460"></span><span class="d" style="--i:461"></span><span class="d" style="--i:462"></span><span class="d" style="--i:463"></span><span class="d" style="--i:464"></span><span class="d" style="--i:465"></span><span class="d" style="--i:466"></span><span class="d" style="--i:467"></span><span class="d" style="--i:468"></span><span class="d" style="--i:469"></span><span class="d" style="--i:470"></span><span class="d" style="--i:471"></span><span class="d" style="--i:472"></span><span class="d" style="--i:473"></span><span class="d" style="--i:474"></span><span class="d" style="--i:475"></span><span class="d" style="--i:476"></span><span class="d" style="--i:477"></span><span class="d" style="--i:478"></span><span class="d" style="--i:479"></span><span class="d" style="--i:480"></span><span class="d" style="--i:481"></span><span class="d" style="--i:482"></span><span class="d" style="--i:483"></span><span class="d" style="--i:484"></span><span class="d" style="--i:485"></span><span class="d" style="--i:486"></span><span class="d" style="--i:487"></span><span class="d" style="--i:488"></span><span class="d" style="--i:489"></span><span class="d" style="--i:490"></span><span class="d" style="--i:491"></span><span class="d" style="--i:492"></span><span class="d" style="--i:493"></span><span class="d" style="--i:494"></span><span class="d" style="--i:495"></span><span class="d" style="--i:496"></span><span class="d" style="--i:497"></span><span class="d" style="--i:498"></span><span class="d" style="--i:499"></span></div>
+        <div class="dot-legend">
+          <span class="a"><i></i>每點代表 1 例</span>
+          <span class="b"><i></i>手術部位感染（6 例，位置僅為示意）</span>
+        </div>
+      </div>
+      <div class="result-side">
+        <div>
+          <h3>併發症少</h3>
+          <ul class="out-list">
+            <li>傷口裂開<span class="n">0<small>例</small></span></li>
+            <li>血清腫<span class="n">0<small>例</small></span></li>
+            <li>血腫<span class="n">1<small>例</small></span></li>
+          </ul>
+        </div>
+        <div class="satisfy">
+          <b>高滿意度</b>
+          <p>患者認為傷口閉合過程舒適且外觀美觀，整體滿意度高。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-index">09 / 12</div>
+</section>
+
+<!-- ============ NEW SLIDE 10 — 技術優勢與討論 ============ -->
+<section class="slide" id="study2">
+  <div class="slide-inner">
+    <div class="eyebrow">Discussion · 04</div>
+    <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);">技術優勢與討論</h2>
+
+    <div class="study2-grid">
+      <figure class="poster">
+        <button type="button" class="poster-btn" id="posterBtn" aria-label="放大檢視研究海報">
+          <img src="assets/img/study-poster.jpg" alt="研究海報：500 Consecutive Cesarean Deliveries Closed With Subcuticular Absorbable Staples" loading="lazy">
+          <span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>點擊放大</span>
+        </button>
+        <figcaption><b>研究海報原圖</b><br>500 Consecutive Cesarean Deliveries Closed With Subcuticular Absorbable Staples</figcaption>
+      </figure>
+
+      <div class="adv-list">
+        <div class="adv">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3Z"/></svg></div>
+          <div>
+            <h3>低發炎反應</h3>
+            <p>吻合釘由聚乳酸共聚物組成，在臨床研究中顯示其引發的炎症反應極低，有助於減少傷口滲出液。</p>
+          </div>
+        </div>
+        <div class="adv">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></div>
+          <div>
+            <h3>改善舒適度</h3>
+            <p>吻合釘完全植入於真皮層內，不會穿透皮膚表面，消除了傳統經皮縫合帶來的不適感。</p>
+          </div>
+        </div>
+        <div class="adv">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/></svg></div>
+          <div>
+            <h3>保護組織</h3>
+            <p>該技術能在不勒傷或壓迫組織的情況下精確固定真皮，且其間斷式放置有利於術後引流，並避免感染沿連續縫線擴散。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conclusion">
+      <div class="lbl">結論</div>
+      <p>可吸收皮內吻合器在剖腹產中提供了一種<b>高效、安全且具有優異美容效果</b>的閉合方式，能顯著降低傷口併發症並提升患者的臨床體驗。</p>
+    </div>
+  </div>
+  <div class="footer-index">10 / 12</div>
+</section>
+
+<!-- ============ SLIDE 9 — 總結 (now 11) ============ -->
+<section class="slide" id="s9">
+  <div class="s9-bg-photo"><img src="assets/img/product-hero.png" alt=""></div>
+  <div class="slide-inner">
+    <div class="s9-head">
+      <div class="eyebrow">Summary · 05</div>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);">總結</h2>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="tag"><span class="circ">1</span>臨床效益</div>
+        <ul>
+          <li>縫合速度快、縮短手術時間</li>
+          <li>感染率低、顯著減少瘢痕形成</li>
+          <li>提升術後傷口美觀度</li>
+        </ul>
+      </div>
+      <div class="summary-card">
+        <div class="tag"><span class="circ">2</span>病患體驗</div>
+        <ul>
+          <li>無需拆線，無外露縫線</li>
+          <li>疼痛感降低，恢復日常活動更快</li>
+          <li>傷口美觀，病人滿意度提升</li>
+        </ul>
+      </div>
+      <div class="summary-card">
+        <div class="tag"><span class="circ">3</span>醫療端優勢</div>
+        <ul>
+          <li>縮短手術時間與減少併發症</li>
+          <li>進而降低綜合醫療成本</li>
+        </ul>
+      </div>
+    </div>
+    <div class="feature-row">
+      <span>植入於真皮層</span>
+      <span>免拆釘</span>
+      <span>操作簡單</span>
+      <span>傷口美觀</span>
+      <span>避免針刺風險</span>
+      <span>可以縫合約21 cm 傷口(30 根皮內釘)</span>
+    </div>
+  </div>
+  <div class="footer-index">11 / 12</div>
+</section>
+
+<!-- ============ SLIDE 10 — Thank You ============ -->
+<section class="slide dark" id="s10">
+  <svg class="bg-topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#EAF6F1" stroke-opacity="0.14" fill="none" stroke-width="1">
+      <path d="M-100,700 C 250,600 400,780 760,650 S 1300,520 1600,600"/>
+      <path d="M-100,780 C 250,680 400,860 760,730 S 1300,600 1600,680"/>
+    </g>
+    <circle cx="220" cy="160" r="220" fill="#1F9484" opacity="0.2"/>
+  </svg>
+  <div class="grain"></div>
+  <div class="slide-inner">
+    <div class="eyebrow" style="justify-content:center;">「嘉茵頤縫」一次性可吸收釘皮內吻合器</div>
+    <h2>Thank You！</h2>
+  </div>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="研究海報放大檢視">
+  <div class="hint">點擊任意處或按 Esc 關閉</div>
+  <button type="button" class="close" id="lightboxClose" aria-label="關閉">×</button>
+  <img src="assets/img/study-poster.jpg" alt="研究海報完整圖">
+</div>
+
+<script>
+  const dots = document.querySelectorAll('.nav-dots a');
+  const slides = document.querySelectorAll('.slide');
+  const progressBar = document.getElementById('progressBar');
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id = e.target.id;
+        dots.forEach(d=> d.classList.toggle('active', d.getAttribute('href') === '#'+id));
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s=> io.observe(s));
+
+  function updateProgress(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop/docHeight)*100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive:true });
+  updateProgress();
+
+  // dot field: reveal when scrolled into view
+  const df = document.getElementById('dotfield');
+  if (df) {
+    const dio = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { df.classList.add('in'); dio.disconnect(); } });
+    }, { threshold: 0.35 });
+    dio.observe(df);
+  }
+
+  // poster lightbox
+  const lb = document.getElementById('lightbox');
+  const posterBtn = document.getElementById('posterBtn');
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; posterBtn.focus(); }
+  posterBtn.addEventListener('click', () => { lb.classList.add('open'); document.body.style.overflow='hidden'; lb.scrollTo(0,0); document.getElementById('lightboxClose').focus(); });
+  lb.addEventListener('click', closeLb);
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+
+  // keyboard navigation between slides
+  const slideArr = Array.from(slides);
+  window.addEventListener('keydown', (e)=>{
+    if(!['ArrowDown','ArrowUp','PageDown','PageUp'].includes(e.key)) return;
+    if(lb.classList.contains('open')) return;
+    e.preventDefault();
+    const mid = window.scrollY + window.innerHeight/2;
+    let idx = slideArr.findIndex(s => s.offsetTop <= mid && s.offsetTop + s.offsetHeight > mid);
+    if(idx < 0) idx = 0;
+    if(e.key==='ArrowDown' || e.key==='PageDown') idx = Math.min(idx+1, slideArr.length-1);
+    if(e.key==='ArrowUp' || e.key==='PageUp') idx = Math.max(idx-1, 0);
+    slideArr[idx].scrollIntoView({ behavior:'smooth' });
+  });
+</script>
+</body>
+</html>
